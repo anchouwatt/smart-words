@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#203f37"><meta name="description" content="Smart Words : les mots fléchés pour explorer les métiers de la relation client.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+<title>Smart Words · À vous de jouer</title>
+</head>
+<body>
+<header class="topbar"><a href="#" class="brand" aria-label="Smart Words, accueil"><span class="brand-icon">s<span>↗</span></span><span>smart<span class="brand-light">words</span><small>LE JEU DES MÉTIERS · SMART TRIBUNE</small></span></a><button id="help" class="icon-button" aria-label="Aide et installation">?</button></header>
+<main>
+<section class="intro"><div><span class="eyebrow">UN MOT. UN DÉCLIC.</span><h1>Croisez les mots.<br><em>Élargissez vos horizons.</em></h1><p>De la prospection à la réussite client, découvrez<br class="desktop"> le vocabulaire de vos collègues.</p></div><div class="intro-stamp" aria-hidden="true"><span>À CHAQUE CASE</span><strong>un nouveau<br>point de vue ↗</strong><span>APPRENDRE EN JOUANT</span></div></section>
+<nav class="tabs" aria-label="Navigation principale"><button id="play-tab" class="active" aria-current="page">▦ &nbsp; Jouer</button><button id="dictionary-tab">Aa &nbsp; Dictionnaire <span id="term-count"></span></button><span class="local-label">● &nbsp; Progression sur cet appareil</span></nav>
+<section id="play-view" aria-label="Partie de mots fléchés">
+<div class="game-top"><div><span class="eyebrow">CHOISISSEZ VOTRE TERRAIN DE JEU</span><div class="difficulty" aria-label="Difficulté"><button data-level="1">Facile</button><button data-level="2">Intermédiaire</button><button data-level="3">Difficile</button></div></div><button id="new-game" class="secondary">Nouvelle grille <span>↗</span></button></div>
+<div class="game-layout"><section class="board-card"><div class="board-head"><div><h2 id="grid-title">Votre grille</h2><span id="grid-meta"></span></div><div class="board-tools"><button id="zoom-out" aria-label="Réduire les cases">−</button><span id="zoom-label">100%</span><button id="zoom-in" aria-label="Agrandir les cases">+</button></div></div><p class="board-tip">Touchez un indice ou une case. À un croisement, retouchez pour changer de sens.</p><div id="board-scroll" tabindex="0" aria-label="Grille défilante, glissez pour explorer"><div id="board" role="group" aria-label="Cases de la grille"></div></div><div class="board-footer"><span><i class="legend"></i> Mot sélectionné</span><span>← Glissez pour explorer →</span></div></section>
+<aside class="side"><section class="score-card"><div><span class="eyebrow">VOTRE SCORE</span><strong id="score">0 <small>pts</small></strong></div><span class="score-symbol" aria-hidden="true">✧</span><div class="progress-line"><span id="progress-label">0 mot trouvé</span><span id="percent">0%</span></div><progress id="progress" value="0" max="100"></progress><div class="record">Record du niveau <strong id="record">0 pts</strong></div></section>
+<section class="answer-card"><div class="clue-heading"><span class="eyebrow" id="selected-category">À VOUS DE JOUER</span><span id="direction" class="direction">→</span></div><h2 id="selected-clue">Chargement de la grille…</h2><p id="selected-meta"></p><div id="answer-preview" aria-label="Réponse en cours"></div><div class="answer-actions"><button id="check" class="primary">Vérifier le mot <span>↗</span></button><button id="hint" class="secondary">✧ Indice <small>−15 pts</small></button></div><p id="feedback" role="status" aria-live="polite">Une lettre après l’autre.</p></section>
+<section class="note-card"><span>LE SAVIEZ-VOUS ?</span><p>Un même vocabulaire, plusieurs métiers. Le dictionnaire reste accessible pendant la partie.</p><button id="browse-dictionary">Explorer les termes →</button></section></aside></div>
+<div id="keyboard" aria-label="Clavier tactile AZERTY"><div class="keyboard-title"><span id="keyboard-clue"></span><button id="next-word" aria-label="Mot suivant">Suivant →</button></div><div id="keys"></div></div>
+</section>
+<section id="dictionary-view" hidden><div class="dictionary-head"><div><span class="eyebrow">LE VOCABULAIRE EN COMMUN</span><h2>Le petit lexique des grands échanges.</h2><p>Des termes génériques pour mieux comprendre les métiers de chacun.</p></div></div><div class="filters"><label><span>Rechercher un terme</span><input id="search" type="search" placeholder="Un mot, une définition…" autocomplete="off"></label><label><span>Métier</span><select id="category"><option value="">Tous les métiers</option></select></label></div><p id="result-count" role="status"></p><div id="dictionary-list"></div></section>
+<div id="load-error" hidden role="alert"></div>
+</main>
+<footer class="site-footer">Smart Words · V1 <span>Vocabulaire métier générique · Aucune donnée envoyée</span></footer>
+<dialog id="modal"><button id="close-modal" class="icon-button" aria-label="Fermer">×</button><div id="modal-content"></div></dialog>
+<script type="module" src="app.js"></script>
+</body></html>
